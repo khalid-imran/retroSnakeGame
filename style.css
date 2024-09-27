@@ -9,44 +9,91 @@ body{
 *{
     box-sizing: border-box;
 }
+.main-wrapper{
+    position: relative;
+}
 .score-wrapper{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
     border-radius: 5px;
-    background-color: #2B796C;
+    background-color: #3398DA;
     color: white;
     font-size: 16px;
     margin-bottom: 20px;
 }
 .game-board{
     display: grid;
-    grid-template-columns: repeat(25, 25px);
-    grid-template-rows: repeat(25, 25px);
-    /*background-color: #3D3D3D;*/
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
     border-radius: 5px;
-    background:
-            linear-gradient(to right, #333 1px, transparent 1px),
-            linear-gradient(to bottom, #333 1px, transparent 1px),
-            #3a3a3a; /* Background color for the board */
-    background-size: 25px 25px;
+    background-color: #ffffff;
     border: 1px solid #555;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    /*border-radius: 10px;*/
 }
 .snake{
-    background-color: #2B796C;
+    background-color: #3498db;
 }
 .snake:first-child{
-    background-color: #8DC9BF;
+    background-color: #52a8dd;
+    box-shadow: 0 0 15px 1px #52a8dd;
 }
 .food{
+    background-color: #CF0000;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 1px #CF0000;
+    animation-name: heart;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    transform: scale(1);
+}
+
+.game-home-screen{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
     background-color: #ffffff;
+    border: 1px solid #555;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    height: 400px;
+    font-size: 18px;
+    padding-top: 4rem;
+}
+.game-home-screen img{
+    filter: invert(52%) sepia(90%) saturate(402%) hue-rotate(164deg) brightness(86%) contrast(99%);
+}
+.game-home-screen .title{
+    color: #5fc0ec;
+}
+.game-over{
+    position: absolute;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0;
+    top: -100px;
+    pointer-events: none;
+    transition: all 500ms;
+    width: 100%;
+
+}
+.game-over.active{
+    top: 10rem;
+    transition: all 500ms;
+    color: #CF0000;
+    opacity: 1;
 }
 /*helpers*/
 .bowlby-one-regular {
     font-family: "Bowlby One", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+/*animation*/
+@keyframes heart {
+    from {transform: scale(1);}
+    to {transform: scale(0.5)}
 }
