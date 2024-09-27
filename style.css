@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    background-color: #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+*{
+    box-sizing: border-box;
+}
+.score-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #2B796C;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(25, 25px);
+    grid-template-rows: repeat(25, 25px);
+    /*background-color: #3D3D3D;*/
+    border-radius: 5px;
+    background:
+            linear-gradient(to right, #333 1px, transparent 1px),
+            linear-gradient(to bottom, #333 1px, transparent 1px),
+            #3a3a3a; /* Background color for the board */
+    background-size: 25px 25px;
+    border: 1px solid #555;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /*border-radius: 10px;*/
+}
+.snake{
+    background-color: #2B796C;
+}
+.snake:first-child{
+    background-color: #8DC9BF;
+}
+.food{
+    background-color: #ffffff;
+}
+/*helpers*/
+.bowlby-one-regular {
+    font-family: "Bowlby One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
