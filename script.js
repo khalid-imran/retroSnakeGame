@@ -112,6 +112,7 @@ function handleKeyPress(event) {
 function startGame() {
     gameHomeScreen.style.display = 'none';
     gameBoard.style.display = 'grid';
+    gameBoard.innerHTML = '';
     started = true;
     snake = [{x: 10, y: 10}];
     gameInterval = setInterval(() => {
@@ -121,8 +122,8 @@ function startGame() {
 }
 
 function stopGame() {
-    clearInterval(gameInterval);
     gameBoard.innerHTML = '';
+    clearInterval(gameInterval);
     gameOverScreen.classList.add('active');
     updateHighScore();
     setTimeout(() => {
